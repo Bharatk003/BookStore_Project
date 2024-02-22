@@ -9,13 +9,15 @@
 <body>
     {% block content %}
 
-        <h1>LogIn</h1>
+        <h2>LogIn</h2>
         <form method="post">
             {% csrf_token %}
             {{form.as_p}}
-            <button type="submit">Log In</button>
+            <button type="submit" class="btn btn-success"><div>Log In</div></button>
         </form>
     
     {% endblock content %}
 </body>
 </html>
+
+

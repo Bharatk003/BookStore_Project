@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "afa0717b2df320fa9fc058f5729627e4c70f4e9e3a9cb3b2163a0490494939ee"
+            "sha256": "ec62d4e1904e51b54324c15e62ad5bfce4cb5dca63774fa3e8b8eaaf0c16d991"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -32,6 +32,15 @@
             "index": "pypi",
             "markers": "python_version >= '3.10'",
             "version": "==5.0.2"
+        },
+        "django-crispy-forms": {
+            "hashes": [
+                "sha256:4d7ec431933ad4d4b5c5a6de4a584d24613c347db9ac168723c9aaf63af4bb96",
+                "sha256:d592044771412ae1bd539cc377203aa61d4eebe77fcbc07fbc8f12d3746d4f6b"
+            ],
+            "index": "pypi",
+            "markers": "python_version >= '3.8'",
+            "version": "==2.1"
         },
         "psycopg2-binary": {
             "hashes": [
@@ -119,14 +128,6 @@
             ],
             "markers": "python_version >= '3.5'",
             "version": "==0.4.4"
-        },
-        "tzdata": {
-            "hashes": [
-                "sha256:2674120f8d891909751c38abcdfd386ac0a5a1127954fbc332af6b5ceae07efd",
-                "sha256:9068bc196136463f5245e51efda838afa15aaeca9903f49050dfa2679db4d252"
-            ],
-            "markers": "sys_platform == 'win32'",
-            "version": "==2024.1"
         }
     },
     "develop": {}
