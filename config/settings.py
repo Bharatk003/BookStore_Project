@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
-
+import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -35,13 +35,15 @@ INSTALLED_APPS = [
     ##inbuild apps
     'django.contrib.admin',
     'django.contrib.auth',
+    'django.contrib.sites',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
     ##third party apps
- 
+    'allauth',
+    'allauth.account',
     ##user define apps
     'accounts.apps.AccountsConfig',
     'pages.apps.PagesConfig',
@@ -64,7 +66,7 @@ ROOT_URLCONF = 'config.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [str(BASE_DIR.joinpath('templates'))],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -146,4 +148,21 @@ AUTH_USER_MODEL = 'accounts.CustomUser'
 
 
 LOGIN_REDIRECT_URL = 'home'
-LOGOUT_REDIRECT_URL =  'home'
+ACCOUNT_LOGOUT_REDIRECT =  'home'
+
+ 
+SITE_ID = 1
+AUTHENTICATION_BACKENDS = (
+'django.contrib.auth.backends.ModelBackend',
+'allauth.account.auth_backends.AuthenticationBackend', # new
+)
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend' # new
+
+ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = False # new
+
+
+ACCOUNT_USERNAME_REQUIRED = False # new
+ACCOUNT_AUTHENTICATION_METHOD = 'email' # new
+ACCOUNT_EMAIL_REQUIRED = True # new
+ACCOUNT_UNIQUE_EMAIL = True # new

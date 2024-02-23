@@ -8,5 +8,6 @@ WORKDIR /code
 # Install dependencies
 COPY Pipfile Pipfile.lock /code/
 RUN pip install pipenv && pipenv install --system
+RUN pip install django-allauth=="0.47.0" 
 # Copy project
 COPY . /code/

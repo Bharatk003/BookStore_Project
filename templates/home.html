@@ -18,17 +18,17 @@
         <h1>Homepage</h1>
         <img class="bookcover" src="{% static 'images/dfp_cover_31.png' %}" alt="django cover">
         {% if user.is_authenticated %}
-            Hi {{ user.email }}!
+            Hi {{ user.email }}
             <br>
-            <form action="{% url 'logout' %}" method="post">
+            <form action="{% url 'account_logout' %}" method="post">
                 {% csrf_token %}
                 <button type="submit"> <div>Log out</div></button>
             </form>
             
         {% else %}
             <p>You are not logged in</p>
-            <a href="{% url 'login' %}">Log In</a> |
-            <a href="{% url 'signup' %}">Sign Up</a>
+            <a href="{% url 'account_login' %}">Log In</a> |
+            <a href="{% url 'account_signup' %}">Sign Up</a>
         {% endif %}
     {% endblock content %}
 </body>
