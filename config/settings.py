@@ -171,3 +171,6 @@ ACCOUNT_UNIQUE_EMAIL = True # new
  
 SECRET_KEY = env("DJANGO_SECRET_KEY")
 DEBUG = env.bool("DJANGO_DEBUG")
+
+DEFAULT_FROM_EMAIL = 'admin@bkbookstore.com'
+ 
