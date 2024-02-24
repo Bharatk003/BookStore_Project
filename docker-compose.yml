@@ -1,4 +1,4 @@
-version: '25.0.2'
+version: '3.8'
 
 services:
   web:
@@ -10,7 +10,9 @@ services:
       - "8000:8000"
     depends_on:
       - db
-
+    environment:  # Move environment settings under the 'web' service
+      - "DJANGO_SECRET_KEY=3SJ-TlcQBFTGlLJSaGseDTnYRFa_YruEcnvu1LnYB4U"
+      - "DJANGO_DEBUG=True"
   db:
     image: postgres
     volumes:
