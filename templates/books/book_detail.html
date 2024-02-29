@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Details</title>
+</head>
+<body>
+    {% block content%}
+
+    <div class="book-detail">
+        <h2><a href="#">{{book.title}}</a></h2>
+        <p>author: {{book.author}}</p>
+        <p>price: {{book.price}}</p>
+    </div>
+
+    {% endblock content%}
+</body>
+</html>

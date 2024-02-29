@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     ##user define apps
     'accounts.apps.AccountsConfig',
     'pages.apps.PagesConfig',
+    'books.apps.BooksConfig',
 ]
 
  
@@ -174,3 +175,10 @@ DEBUG = env.bool("DJANGO_DEBUG")
 
 DEFAULT_FROM_EMAIL = 'admin@bkbookstore.com'
  
+ 
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# EMAIL_HOST = 'smtp.gmail.com'
+# EMAIL_PORT = 587   # Usually 587 for TLS or 465 for SSL
+# EMAIL_HOST_USER = 'bkbookstore003@gmail.com'
+# EMAIL_HOST_PASSWORD = '!@#$QWERasdf'
+# EMAIL_USE_TLS = True  # Set it to True if your SMTP server uses TLS

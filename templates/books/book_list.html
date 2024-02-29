@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% extends '_base.html' %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Books{% endblock title %}</title>
+</head>
+<body>
+    <!-- templates/books/book_list.html -->
+
+{% block content %}
+{% for book in book_list %}
+<div>
+<!-- <h2><a href="{% url 'book_detail' book.pk %}">{{ book.title }}</a></h2>  instead of using link we use get_absolute_url  -->
+<h2><a href="{{book.get_absolute_url}}">{{book.title}}</a></h2>
+</div>
+{% endfor %}
+{% endblock content %}
+</body>
+</html>
