@@ -30,7 +30,7 @@ SECRET_KEY = 'django-insecure-2ix4&byp%q6=2w$jjv_emc)k00j=v54dtpkxxr@x5bi0c^wzi*
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env.bool("DJANGO_DEBUG")
-ALLOWED_HOSTS = ['.herokuapp.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['192.168.1.104', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -182,3 +182,8 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 # EMAIL_HOST_USER = 'bkbookstore003@gmail.com'
 # EMAIL_HOST_PASSWORD = '!@#$QWERasdf'
 # EMAIL_USE_TLS = True  # Set it to True if your SMTP server uses TLS
+
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = str(BASE_DIR.joinpath('media'))
+

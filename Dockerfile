@@ -10,5 +10,6 @@ COPY Pipfile Pipfile.lock /code/
 RUN pip install pipenv && pipenv install --system
 RUN pip install django-allauth=="0.47.0" 
 RUN pip install environs[django]==8.0.0
+RUN pip install pillow
 # Copy project
 COPY . /code/

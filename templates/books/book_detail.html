@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% extends '_base.html' %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -9,7 +10,10 @@
     {% block content%}
 
     <div class="book-detail">
-        <h2><a href="#">{{book.title}}</a></h2>
+        {% if book.cover %}
+        <img class="bookcover" src="{{ book.cover.url}}" alt="{{ book.title }}">
+        {% endif %}
+        <h2><a href="{{book.get_absolute_url}}">{{book.title}}</a></h2>
         <p>author: {{book.author}}</p>
         <p>price: {{book.price}}</p>
         <div>
