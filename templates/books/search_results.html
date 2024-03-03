@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% extends '_base.html' %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>search</title>
+</head>
+<body>
+    {% block content %}
+        <h1>Search Results</h1>
+        {% for book in book_list %}
+            <h4><a href="{{ book.get_absolute_url }}">{{book.title}}</a></h4>
+            <p>Author: {{book.author}}</p>
+            <p>price: {{book.price}}</p>
+        {% endfor %}
+
+
+    {% endblock content %}
+</body>
+</html>
