@@ -11,5 +11,6 @@ RUN pip install pipenv && pipenv install --system
 RUN pip install django-allauth=="0.47.0" 
 RUN pip install environs[django]==8.0.0
 RUN pip install pillow
+RUN pip install django-debug-toolbar
 # Copy project
 COPY . /code/

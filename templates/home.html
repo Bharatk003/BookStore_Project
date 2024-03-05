@@ -1,32 +1,45 @@
-<!-- templates/home.html -->
 <!DOCTYPE html>
 {% extends '_base.html' %}
 {% load static %}
-
 
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Home{% endblock title %}</title>
-    
+    <style>
+        /* Additional CSS styles */
+        .search-input {
+            height: 40px;
+            padding-left: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 100%;
+        }
+        .search-button {
+            background-color: #0095f6;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        /* Add more styles as needed */
+    </style>
 </head>
 <body>
-    
-    
     {% block content %}
-        <h1>Homepage</h1>
-        <form class="form-inline mt-2 mt-md-0" action="{% url 'search_results' %}"method="get">
-            <input name="q" class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" style="height: 30px;">
+        <h1 class="heading">Welcome to Our Bookstore!</h1>
+        <form class="form-inline mt-2 mt-md-0" action="{% url 'search_results' %}" method="get">
+            <input name="q" class="search-input" type="text" placeholder="Search for books, authors, genres...">
+            <button type="submit" class="search-button btn btn-success" style="height: 20;">Search</button>
         </form>
         {% if user.is_authenticated %}
-             
-    
-            
+            <!-- User is logged in -->
+            <!-- Add personalized content here -->
         {% else %}
-        <!-- <div   class="alert alert-warning" role="alert">
-            You are not logged in. Please <a href="{% url 'account_login' %}" class="alert-link">Log In</a> or <a href="{% url 'account_signup' %}" class="alert-link">Sign Up</a>.
-        </div> -->
+            <!-- User is not logged in -->
+            <!-- Consider adding a call-to-action button for users to log in/sign up -->
         {% endif %}
     {% endblock content %}
 </body>
