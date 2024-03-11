@@ -20,6 +20,8 @@ from django.conf.urls.static import static
 from django.urls import path, include
 
 urlpatterns = [
+    path('anything-but-admin/', admin.site.urls), # new
+    
     path('admin/', admin.site.urls),
      
     path('accounts/', include('allauth.urls')),

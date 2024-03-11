@@ -11,8 +11,14 @@ services:
     depends_on:
       - db
     environment:  # Move environment settings under the 'web' service
-      - "DJANGO_SECRET_KEY=3SJ-TlcQBFTGlLJSaGseDTnYRFa_YruEcnvu1LnYB4U"
-      - "DJANGO_DEBUG=True"
+      - "DJANGO_SECRET_KEY=u2Oafii3g45MrJXPaKdLOLwd4Cu9trzChhniAn5bkXCbbaPUrdI"
+      - "DJANGO_DEBUG=False"
+      - "DJANGO_SECURE_SSL_REDIRECT=False" # new
+      - "DJANGO_SECURE_HSTS_SECONDS=0" # new
+      - "DJANGO_SECURE_HSTS_INCLUDE_SUBDOMAINS=False" # new
+      - "DJANGO_SECURE_HSTS_PRELOAD=False" # new
+      - "DJANGO_SESSION_COOKIE_SECURE=False" # new
+      - "DJANGO_CSRF_COOKIE_SECURE=False" # new
   db:
     image: postgres
     volumes:
