@@ -31,3 +31,8 @@ class SearchResultsListView( ListView):
         query = self.request.GET.get('q')
         return (book.objects.filter(Q(title__icontains=query) | Q(author__icontains=query) | Q(price__icontains=query))) 
      
+     
+class ReadBookDetailView(DetailView):
+    model = book
+    template_name = 'books/read_book.html'
+    context_object_name = 'book'

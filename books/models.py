@@ -15,6 +15,7 @@ class book(models.Model):
     author = models.CharField(max_length=60)
     price = models.DecimalField(max_digits=6, decimal_places=2)
     cover = models.ImageField(upload_to='covers/', blank=True)
+    pdf = models.FileField(upload_to='pdfs/', blank=True, null=True)
     
     class Meta: # new
         permissions = [
